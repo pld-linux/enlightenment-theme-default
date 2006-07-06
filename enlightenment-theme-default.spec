@@ -20,8 +20,6 @@ BuildRequires:	edje
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%undefine	__cxx
-
 %description
 Enlightenment default theme.
 
@@ -50,7 +48,8 @@ Requires:	enlightenmentDR17
 Provides:	enlightenment-init-default
 
 %description -n enlightenment-init-default-slow_pc
-Default Enlightenment init theme with small textures and half number of frames.
+Default Enlightenment init theme with small textures and half number
+of frames.
 
 %package -n enlightenment-init-default-medium_pc
 Summary:	Default Enlightenment init theme for medium speed computers
@@ -59,7 +58,8 @@ Requires:	enlightenmentDR17
 Provides:	enlightenment-init-default
 
 %description -n enlightenment-init-default-medium_pc
-Default Enlightenment init theme with large textures and half number of frames.
+Default Enlightenment init theme with large textures and half number
+of frames.
 
 %package -n enlightenment-init-default-fast_pc
 Summary:	Default Enlightenment init theme with large textures and all frames
