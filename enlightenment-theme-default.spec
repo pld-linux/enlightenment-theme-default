@@ -7,12 +7,12 @@
 
 Summary:	Default Enlightenment themes
 Name:		enlightenment-theme-default
-Version:	0.16.999.029
+Version:	0.16.999.030
 Release:	1
 License:	BSD
 Group:		Themes
 Source0:	http://enlightenment.freedesktop.org/files/%{_src_name}-%{version}.tar.gz
-# Source0-md5:	96699aea25f0ad0bfc4ad1123488e244
+# Source0-md5:	16724991638d19d5a67b9d9273b584c9
 Source1:	e17_icon_background.png
 # Source1-md5:	5087c23fc21bc27dc8561d2735a1be64
 URL:		http://enlightenment.org/
