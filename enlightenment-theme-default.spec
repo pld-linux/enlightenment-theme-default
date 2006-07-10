@@ -27,7 +27,7 @@ Enlightenment default theme.
 Summary:	Default Enlightenment theme with small textures
 Group:		Themes
 Requires:	enlightenmentDR17
-Provides:	enlightenment-theme-default
+Provides:	enlightenment-theme-default = %{version}
 
 %description slow_pc
 Default Enlightenment theme with small textures.
@@ -36,7 +36,7 @@ Default Enlightenment theme with small textures.
 Summary:	Default Enlightenment theme with large textures
 Group:		Themes
 Requires:	enlightenmentDR17
-Provides:	enlightenment-theme-default
+Provides:	enlightenment-theme-default = %{version}
 
 %description fast_pc
 Default Enlightenment theme with large textures.
