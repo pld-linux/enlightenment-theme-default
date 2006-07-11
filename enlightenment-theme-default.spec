@@ -138,23 +138,23 @@ rm -rf $RPM_BUILD_ROOT
 
 %post slow_pc
 [ -e %{_datadir}/enlightenmentDR17/data/themes/default.edj ] || \
-	ln -s %{_datadir}/enlightenmentDR17/data/themes/{default-slow_pc.edj,default.edj}
+	ln -sf %{_datadir}/enlightenmentDR17/data/themes/{default-slow_pc.edj,default.edj}
 
 %post fast_pc
 [ -e %{_datadir}/enlightenmentDR17/data/themes/default.edj ] || \
-	ln -s %{_datadir}/enlightenmentDR17/data/themes/{default-fast_pc.edj,default.edj}
+	ln -sf %{_datadir}/enlightenmentDR17/data/themes/{default-fast_pc.edj,default.edj}
 
 %post -n enlightenment-init-default-slow_pc
-[ -e %{_datadir}/enlightenmentDR17/data/init/default.edj ] || \
-	ln -s %{_datadir}/enlightenmentDR17/data/init/{init-slow_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenmentDR17/data/init/init.edj ] || \
+	ln -sf %{_datadir}/enlightenmentDR17/data/init/{init-slow_pc.edj,init.edj}
 
 %post -n enlightenment-init-default-medium_pc
-[ -e %{_datadir}/enlightenmentDR17/data/init/default.edj ] || \
-	ln -s %{_datadir}/enlightenmentDR17/data/init/{init-medium_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenmentDR17/data/init/init.edj ] || \
+	ln -sf %{_datadir}/enlightenmentDR17/data/init/{init-medium_pc.edj,init.edj}
 
 %post -n enlightenment-init-default-fast_pc
-[ -e %{_datadir}/enlightenmentDR17/data/init/default.edj ] || \
-	ln -s %{_datadir}/enlightenmentDR17/data/init/{init-fast_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenmentDR17/data/init/init.edj ] || \
+	ln -sf %{_datadir}/enlightenmentDR17/data/init/{init-fast_pc.edj,init.edj}
 
 %files slow_pc
 %defattr(644,root,root,755)
