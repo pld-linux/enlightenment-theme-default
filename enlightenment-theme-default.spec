@@ -31,7 +31,7 @@ Domy¶lne motywy Enlightenmenta.
 Summary:	Default Enlightenment theme with small textures
 Summary(pl):	Domy¶lny motyw Enlightenmenta z ma³ymi teksturami
 Group:		Themes
-Requires:	enlightenmentDR17
+Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-theme-default = %{version}
 
 %description slow_pc
@@ -44,7 +44,7 @@ Domy¶lny motyw Enlightenmenta z ma³ymi teksturami.
 Summary:	Default Enlightenment theme with large textures
 Summary(pl):	Domy¶lny motyw Enlightenmenta z du¿ymi teksturami
 Group:		Themes
-Requires:	enlightenmentDR17
+Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-theme-default = %{version}
 
 %description fast_pc
@@ -57,7 +57,7 @@ Domy¶lny motyw Enlightenmenta z du¿ymi teksturami.
 Summary:	Default Enlightenment init theme for slow computers
 Summary(pl):	Domy¶lny pocz±tkowy motyw Enlightenmenta dla wolnych komputerów
 Group:		Themes
-Requires:	enlightenmentDR17
+Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
 
 %description -n enlightenment-init-default-slow_pc
@@ -72,7 +72,7 @@ razy mniejszej liczbie ramek.
 Summary:	Default Enlightenment init theme for medium speed computers
 Summary(pl):	Domy¶lny pocz±tkowy motyw Enlightenmenta dla komputerów ¶redniej szybko¶ci
 Group:		Themes
-Requires:	enlightenmentDR17
+Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
 
 %description -n enlightenment-init-default-medium_pc
@@ -87,7 +87,7 @@ razy mniejszej liczbie ramek.
 Summary:	Default Enlightenment init theme with large textures and all frames
 Summary(pl):	Domy¶lny pocz±tkowy motyw Enlightenmenta z du¿ymi teksturami i wszystkimi ramkami
 Group:		Themes
-Requires:	enlightenmentDR17
+Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
 
 %description -n enlightenment-init-default-fast_pc
@@ -123,60 +123,60 @@ mv data/themes/{default.edj,default-fast_pc.edj}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/enlightenmentDR17/data/{init,themes}
+install -d $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/{init,themes}
 
 install data/init/{init-slow_pc.edj,init-medium_pc.edj,init-fast_pc.edj} \
-	$RPM_BUILD_ROOT%{_datadir}/enlightenmentDR17/data/init/
-touch $RPM_BUILD_ROOT%{_datadir}/enlightenmentDR17/data/init/init.edj
+	$RPM_BUILD_ROOT%{_datadir}/enlightenment/data/init/
+touch $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/init/init.edj
 
 install data/themes/{default-slow_pc.edj,default-fast_pc.edj} \
-	$RPM_BUILD_ROOT%{_datadir}/enlightenmentDR17/data/themes/
-touch $RPM_BUILD_ROOT%{_datadir}/enlightenmentDR17/data/themes/default.edj
+	$RPM_BUILD_ROOT%{_datadir}/enlightenment/data/themes/
+touch $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/themes/default.edj
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post slow_pc
-[ -e %{_datadir}/enlightenmentDR17/data/themes/default.edj ] || \
-	ln -sf %{_datadir}/enlightenmentDR17/data/themes/{default-slow_pc.edj,default.edj}
+[ -e %{_datadir}/enlightenment/data/themes/default.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/themes/{default-slow_pc.edj,default.edj}
 
 %post fast_pc
-[ -e %{_datadir}/enlightenmentDR17/data/themes/default.edj ] || \
-	ln -sf %{_datadir}/enlightenmentDR17/data/themes/{default-fast_pc.edj,default.edj}
+[ -e %{_datadir}/enlightenment/data/themes/default.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/themes/{default-fast_pc.edj,default.edj}
 
 %post -n enlightenment-init-default-slow_pc
-[ -e %{_datadir}/enlightenmentDR17/data/init/init.edj ] || \
-	ln -sf %{_datadir}/enlightenmentDR17/data/init/{init-slow_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenment/data/init/init.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/init/{init-slow_pc.edj,init.edj}
 
 %post -n enlightenment-init-default-medium_pc
-[ -e %{_datadir}/enlightenmentDR17/data/init/init.edj ] || \
-	ln -sf %{_datadir}/enlightenmentDR17/data/init/{init-medium_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenment/data/init/init.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/init/{init-medium_pc.edj,init.edj}
 
 %post -n enlightenment-init-default-fast_pc
-[ -e %{_datadir}/enlightenmentDR17/data/init/init.edj ] || \
-	ln -sf %{_datadir}/enlightenmentDR17/data/init/{init-fast_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenment/data/init/init.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/init/{init-fast_pc.edj,init.edj}
 
 %files slow_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenmentDR17/data/themes/default-slow_pc.edj
-%ghost %{_datadir}/enlightenmentDR17/data/themes/default.edj
+%{_datadir}/enlightenment/data/themes/default-slow_pc.edj
+%ghost %{_datadir}/enlightenment/data/themes/default.edj
 
 %files fast_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenmentDR17/data/themes/default-fast_pc.edj
-%ghost %{_datadir}/enlightenmentDR17/data/themes/default.edj
+%{_datadir}/enlightenment/data/themes/default-fast_pc.edj
+%ghost %{_datadir}/enlightenment/data/themes/default.edj
 
 %files -n enlightenment-init-default-slow_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenmentDR17/data/init/init-slow_pc.edj
-%ghost %{_datadir}/enlightenmentDR17/data/init/init.edj
+%{_datadir}/enlightenment/data/init/init-slow_pc.edj
+%ghost %{_datadir}/enlightenment/data/init/init.edj
 
 %files -n enlightenment-init-default-medium_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenmentDR17/data/init/init-medium_pc.edj
-%ghost %{_datadir}/enlightenmentDR17/data/init/init.edj
+%{_datadir}/enlightenment/data/init/init-medium_pc.edj
+%ghost %{_datadir}/enlightenment/data/init/init.edj
 
 %files -n enlightenment-init-default-fast_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenmentDR17/data/init/init-fast_pc.edj
-%ghost %{_datadir}/enlightenmentDR17/data/init/init.edj
+%{_datadir}/enlightenment/data/init/init-fast_pc.edj
+%ghost %{_datadir}/enlightenment/data/init/init.edj
