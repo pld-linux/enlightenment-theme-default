@@ -8,14 +8,12 @@
 Summary:	Default Enlightenment themes
 Summary(pl):	Domy¶lne motywy Enlightenmenta
 Name:		enlightenment-theme-default
-Version:	0.16.999.030
+Version:	0.16.999.031
 Release:	1
 License:	BSD
 Group:		Themes
 Source0:	http://enlightenment.freedesktop.org/files/%{_src_name}-%{version}.tar.gz
-# Source0-md5:	16724991638d19d5a67b9d9273b584c9
-Source1:	e17_icon_background.png
-# Source1-md5:	5087c23fc21bc27dc8561d2735a1be64
+# Source0-md5:	2e468e84199b97d67605207a55041c6d
 URL:		http://enlightenment.org/
 BuildRequires:	edje
 BuildArch:	noarch
@@ -99,7 +97,6 @@ wszystkimi ramkami.
 
 %prep
 %setup -q -n %{_src_name}-%{version}
-install %{SOURCE1} data/themes/images/e17_icon_background.png
 for DIR in init themes; do
 sed -e 's/@EDJE_DEF@/-DLOWRES_PDA=1 -DMEDIUMRES_PDA=2 -DHIRES_PDA=3 -DSLOW_PC=4 -DMEDIUM_PC=5 -DFAST_PC=6 -DE17_PROFILE=$(PROFILE)/' \
 	-e 's#@edje_cc@#%{_bindir}/edje_cc#'	\
