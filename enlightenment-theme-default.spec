@@ -8,12 +8,12 @@
 Summary:	Default Enlightenment themes
 Summary(pl):	Domy¶lne motywy Enlightenmenta
 Name:		enlightenment-theme-default
-Version:	0.16.999.031
+Version:	0.16.999.036
 Release:	1
 License:	BSD
 Group:		Themes
 Source0:	http://enlightenment.freedesktop.org/files/%{_src_name}-%{version}.tar.gz
-# Source0-md5:	2e468e84199b97d67605207a55041c6d
+# Source0-md5:	bf9ce15f009b7a8d8875fddea2ea065f
 URL:		http://enlightenment.org/
 BuildRequires:	edje
 BuildArch:	noarch
@@ -106,12 +106,12 @@ sed -e 's/@EDJE_DEF@/-DLOWRES_PDA=1 -DMEDIUMRES_PDA=2 -DHIRES_PDA=3 -DSLOW_PC=4 
 done
 
 %build
-%{__make} -C data/init init.edj PROFILE=SLOW_PC
-mv data/init/{init.edj,init-slow_pc.edj}
-%{__make} -C data/init init.edj PROFILE=MEDIUM_PC
-mv data/init/{init.edj,init-medium_pc.edj}
-%{__make} -C data/init init.edj PROFILE=FAST_PC
-mv data/init/{init.edj,init-fast_pc.edj}
+%{__make} -C data/init default.edj PROFILE=SLOW_PC
+mv data/init/{default.edj,default-slow_pc.edj}
+%{__make} -C data/init default.edj PROFILE=MEDIUM_PC
+mv data/init/{default.edj,default-medium_pc.edj}
+%{__make} -C data/init default.edj PROFILE=FAST_PC
+mv data/init/{default.edj,default-fast_pc.edj}
 
 %{__make} -C data/themes default.edj PROFILE=SLOW_PC
 mv data/themes/{default.edj,default-slow_pc.edj}
@@ -122,11 +122,11 @@ mv data/themes/{default.edj,default-fast_pc.edj}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/{init,themes}
 
-install data/init/{init-slow_pc.edj,init-medium_pc.edj,init-fast_pc.edj} \
+install data/init/default-{slow,medium,fast}_pc.edj \
 	$RPM_BUILD_ROOT%{_datadir}/enlightenment/data/init/
-touch $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/init/init.edj
+touch $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/init/default.edj
 
-install data/themes/{default-slow_pc.edj,default-fast_pc.edj} \
+install data/themes/default-{slow,fast}_pc.edj \
 	$RPM_BUILD_ROOT%{_datadir}/enlightenment/data/themes/
 touch $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/themes/default.edj
 
@@ -142,16 +142,16 @@ rm -rf $RPM_BUILD_ROOT
 	ln -sf %{_datadir}/enlightenment/data/themes/{default-fast_pc.edj,default.edj}
 
 %post -n enlightenment-init-default-slow_pc
-[ -e %{_datadir}/enlightenment/data/init/init.edj ] || \
-	ln -sf %{_datadir}/enlightenment/data/init/{init-slow_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenment/data/init/default.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/init/{default-slow_pc.edj,default.edj}
 
 %post -n enlightenment-init-default-medium_pc
-[ -e %{_datadir}/enlightenment/data/init/init.edj ] || \
-	ln -sf %{_datadir}/enlightenment/data/init/{init-medium_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenment/data/init/default.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/init/{default-medium_pc.edj,default.edj}
 
 %post -n enlightenment-init-default-fast_pc
-[ -e %{_datadir}/enlightenment/data/init/init.edj ] || \
-	ln -sf %{_datadir}/enlightenment/data/init/{init-fast_pc.edj,init.edj}
+[ -e %{_datadir}/enlightenment/data/init/default.edj ] || \
+	ln -sf %{_datadir}/enlightenment/data/init/{default-fast_pc.edj,default.edj}
 
 %files slow_pc
 %defattr(644,root,root,755)
@@ -165,15 +165,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n enlightenment-init-default-slow_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenment/data/init/init-slow_pc.edj
-%ghost %{_datadir}/enlightenment/data/init/init.edj
+%{_datadir}/enlightenment/data/init/default-slow_pc.edj
+%ghost %{_datadir}/enlightenment/data/init/default.edj
 
 %files -n enlightenment-init-default-medium_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenment/data/init/init-medium_pc.edj
-%ghost %{_datadir}/enlightenment/data/init/init.edj
+%{_datadir}/enlightenment/data/init/default-medium_pc.edj
+%ghost %{_datadir}/enlightenment/data/init/default.edj
 
 %files -n enlightenment-init-default-fast_pc
 %defattr(644,root,root,755)
-%{_datadir}/enlightenment/data/init/init-fast_pc.edj
-%ghost %{_datadir}/enlightenment/data/init/init.edj
+%{_datadir}/enlightenment/data/init/default-fast_pc.edj
+%ghost %{_datadir}/enlightenment/data/init/default.edj
