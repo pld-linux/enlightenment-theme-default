@@ -6,7 +6,7 @@
 %define		_src_name	enlightenment
 
 Summary:	Default Enlightenment themes
-Summary(pl.UTF-8):   Domyślne motywy Enlightenmenta
+Summary(pl.UTF-8):	Domyślne motywy Enlightenmenta
 Name:		enlightenment-theme-default
 Version:	0.16.999.036
 Release:	1
@@ -27,7 +27,7 @@ Domyślne motywy Enlightenmenta.
 
 %package slow_pc
 Summary:	Default Enlightenment theme with small textures
-Summary(pl.UTF-8):   Domyślny motyw Enlightenmenta z małymi teksturami
+Summary(pl.UTF-8):	Domyślny motyw Enlightenmenta z małymi teksturami
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-theme-default = %{version}
@@ -40,7 +40,7 @@ Domyślny motyw Enlightenmenta z małymi teksturami.
 
 %package fast_pc
 Summary:	Default Enlightenment theme with large textures
-Summary(pl.UTF-8):   Domyślny motyw Enlightenmenta z dużymi teksturami
+Summary(pl.UTF-8):	Domyślny motyw Enlightenmenta z dużymi teksturami
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-theme-default = %{version}
@@ -53,7 +53,7 @@ Domyślny motyw Enlightenmenta z dużymi teksturami.
 
 %package -n enlightenment-init-default-slow_pc
 Summary:	Default Enlightenment init theme for slow computers
-Summary(pl.UTF-8):   Domyślny początkowy motyw Enlightenmenta dla wolnych komputerów
+Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla wolnych komputerów
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
@@ -68,7 +68,7 @@ razy mniejszej liczbie ramek.
 
 %package -n enlightenment-init-default-medium_pc
 Summary:	Default Enlightenment init theme for medium speed computers
-Summary(pl.UTF-8):   Domyślny początkowy motyw Enlightenmenta dla komputerów średniej szybkości
+Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla komputerów średniej szybkości
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
@@ -83,7 +83,7 @@ razy mniejszej liczbie ramek.
 
 %package -n enlightenment-init-default-fast_pc
 Summary:	Default Enlightenment init theme with large textures and all frames
-Summary(pl.UTF-8):   Domyślny początkowy motyw Enlightenmenta z dużymi teksturami i wszystkimi ramkami
+Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta z dużymi teksturami i wszystkimi ramkami
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
