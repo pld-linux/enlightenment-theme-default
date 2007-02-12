@@ -6,7 +6,7 @@
 %define		_src_name	enlightenment
 
 Summary:	Default Enlightenment themes
-Summary(pl):	Domy¶lne motywy Enlightenmenta
+Summary(pl.UTF-8):   DomyÅ›lne motywy Enlightenmenta
 Name:		enlightenment-theme-default
 Version:	0.16.999.036
 Release:	1
@@ -22,12 +22,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Enlightenment default theme.
 
-%description -l pl
-Domy¶lne motywy Enlightenmenta.
+%description -l pl.UTF-8
+DomyÅ›lne motywy Enlightenmenta.
 
 %package slow_pc
 Summary:	Default Enlightenment theme with small textures
-Summary(pl):	Domy¶lny motyw Enlightenmenta z ma³ymi teksturami
+Summary(pl.UTF-8):   DomyÅ›lny motyw Enlightenmenta z maÅ‚ymi teksturami
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-theme-default = %{version}
@@ -35,12 +35,12 @@ Provides:	enlightenment-theme-default = %{version}
 %description slow_pc
 Default Enlightenment theme with small textures.
 
-%description slow_pc -l pl
-Domy¶lny motyw Enlightenmenta z ma³ymi teksturami.
+%description slow_pc -l pl.UTF-8
+DomyÅ›lny motyw Enlightenmenta z maÅ‚ymi teksturami.
 
 %package fast_pc
 Summary:	Default Enlightenment theme with large textures
-Summary(pl):	Domy¶lny motyw Enlightenmenta z du¿ymi teksturami
+Summary(pl.UTF-8):   DomyÅ›lny motyw Enlightenmenta z duÅ¼ymi teksturami
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-theme-default = %{version}
@@ -48,12 +48,12 @@ Provides:	enlightenment-theme-default = %{version}
 %description fast_pc
 Default Enlightenment theme with large textures.
 
-%description fast_pc -l pl
-Domy¶lny motyw Enlightenmenta z du¿ymi teksturami.
+%description fast_pc -l pl.UTF-8
+DomyÅ›lny motyw Enlightenmenta z duÅ¼ymi teksturami.
 
 %package -n enlightenment-init-default-slow_pc
 Summary:	Default Enlightenment init theme for slow computers
-Summary(pl):	Domy¶lny pocz±tkowy motyw Enlightenmenta dla wolnych komputerów
+Summary(pl.UTF-8):   DomyÅ›lny poczÄ…tkowy motyw Enlightenmenta dla wolnych komputerÃ³w
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
@@ -62,13 +62,13 @@ Provides:	enlightenment-init-default
 Default Enlightenment init theme with small textures and half number
 of frames.
 
-%description -n enlightenment-init-default-slow_pc -l pl
-Domy¶lny pocz±tkowy motyw Enlightenmenta z ma³ymi teksturami i dwa
+%description -n enlightenment-init-default-slow_pc -l pl.UTF-8
+DomyÅ›lny poczÄ…tkowy motyw Enlightenmenta z maÅ‚ymi teksturami i dwa
 razy mniejszej liczbie ramek.
 
 %package -n enlightenment-init-default-medium_pc
 Summary:	Default Enlightenment init theme for medium speed computers
-Summary(pl):	Domy¶lny pocz±tkowy motyw Enlightenmenta dla komputerów ¶redniej szybko¶ci
+Summary(pl.UTF-8):   DomyÅ›lny poczÄ…tkowy motyw Enlightenmenta dla komputerÃ³w Å›redniej szybkoÅ›ci
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
@@ -77,13 +77,13 @@ Provides:	enlightenment-init-default
 Default Enlightenment init theme with large textures and half number
 of frames.
 
-%description -n enlightenment-init-default-medium_pc -l pl
-Domy¶lny pocz±tkowy motyw Enlightenmenta z du¿ymi teksturami i dwa
+%description -n enlightenment-init-default-medium_pc -l pl.UTF-8
+DomyÅ›lny poczÄ…tkowy motyw Enlightenmenta z duÅ¼ymi teksturami i dwa
 razy mniejszej liczbie ramek.
 
 %package -n enlightenment-init-default-fast_pc
 Summary:	Default Enlightenment init theme with large textures and all frames
-Summary(pl):	Domy¶lny pocz±tkowy motyw Enlightenmenta z du¿ymi teksturami i wszystkimi ramkami
+Summary(pl.UTF-8):   DomyÅ›lny poczÄ…tkowy motyw Enlightenmenta z duÅ¼ymi teksturami i wszystkimi ramkami
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
 Provides:	enlightenment-init-default
@@ -91,8 +91,8 @@ Provides:	enlightenment-init-default
 %description -n enlightenment-init-default-fast_pc
 Default Enlightenment init theme with large textures and all frames.
 
-%description -n enlightenment-init-default-fast_pc -l pl
-Domy¶lny pocz±tkowy motyw Enlightenmenta z du¿ymi tekstorami i
+%description -n enlightenment-init-default-fast_pc -l pl.UTF-8
+DomyÅ›lny poczÄ…tkowy motyw Enlightenmenta z duÅ¼ymi tekstorami i
 wszystkimi ramkami.
 
 %prep
