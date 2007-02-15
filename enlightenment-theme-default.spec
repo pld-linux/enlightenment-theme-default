@@ -56,7 +56,7 @@ Summary:	Default Enlightenment init theme for slow computers
 Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla wolnych komputerów
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
-Provides:	enlightenment-init-default
+Provides:	enlightenment-init-default = %{version}
 
 %description -n enlightenment-init-default-slow_pc
 Default Enlightenment init theme with small textures and half number
@@ -71,7 +71,7 @@ Summary:	Default Enlightenment init theme for medium speed computers
 Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla komputerów średniej szybkości
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
-Provides:	enlightenment-init-default
+Provides:	enlightenment-init-default = %{version}
 
 %description -n enlightenment-init-default-medium_pc
 Default Enlightenment init theme with large textures and half number
@@ -86,7 +86,7 @@ Summary:	Default Enlightenment init theme with large textures and all frames
 Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta z dużymi teksturami i wszystkimi ramkami
 Group:		Themes
 Requires:	enlightenment >= 0.16.999
-Provides:	enlightenment-init-default
+Provides:	enlightenment-init-default = %{version}
 
 %description -n enlightenment-init-default-fast_pc
 Default Enlightenment init theme with large textures and all frames.
