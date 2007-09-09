@@ -13,7 +13,7 @@ Release:	1
 License:	BSD
 Group:		Themes
 Source0:	http://enlightenment.freedesktop.org/files/%{src_name}-%{version}.tar.gz
-# Source0-md5:	7ca0359905aecc81bca85208148d9264
+# Source0-md5:	d54d8f7094b398fbd547992b8ad80cae
 URL:		http://enlightenment.org/
 BuildRequires:	edje
 BuildArch:	noarch
