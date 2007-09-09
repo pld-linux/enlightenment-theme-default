@@ -3,16 +3,16 @@
 #	- some smart way to create symlink when one theme is uninstalled
 #	  but other still exists
 
-%define		_src_name	enlightenment
+%define		src_name	enlightenment
 
 Summary:	Default Enlightenment themes
 Summary(pl.UTF-8):	Domyślne motywy Enlightenmenta
 Name:		enlightenment-theme-default
-Version:	0.16.999.037
+Version:	0.16.999.038
 Release:	1
 License:	BSD
 Group:		Themes
-Source0:	http://enlightenment.freedesktop.org/files/%{_src_name}-%{version}.tar.gz
+Source0:	http://enlightenment.freedesktop.org/files/%{src_name}-%{version}.tar.gz
 # Source0-md5:	7ca0359905aecc81bca85208148d9264
 URL:		http://enlightenment.org/
 BuildRequires:	edje
@@ -29,7 +29,7 @@ Domyślne motywy Enlightenmenta.
 Summary:	Default Enlightenment theme with small textures
 Summary(pl.UTF-8):	Domyślny motyw Enlightenmenta z małymi teksturami
 Group:		Themes
-Requires:	enlightenment >= 0.16.999
+Requires:	enlightenment >= %{version}
 Provides:	enlightenment-theme-default = %{version}
 
 %description slow_pc
@@ -42,7 +42,7 @@ Domyślny motyw Enlightenmenta z małymi teksturami.
 Summary:	Default Enlightenment theme with large textures
 Summary(pl.UTF-8):	Domyślny motyw Enlightenmenta z dużymi teksturami
 Group:		Themes
-Requires:	enlightenment >= 0.16.999
+Requires:	enlightenment >= %{version}
 Provides:	enlightenment-theme-default = %{version}
 
 %description fast_pc
@@ -55,7 +55,7 @@ Domyślny motyw Enlightenmenta z dużymi teksturami.
 Summary:	Default Enlightenment init theme for slow computers
 Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla wolnych komputerów
 Group:		Themes
-Requires:	enlightenment >= 0.16.999
+Requires:	enlightenment >= %{version}
 Provides:	enlightenment-init-default = %{version}
 
 %description -n enlightenment-init-default-slow_pc
@@ -70,7 +70,7 @@ razy mniejszej liczbie ramek.
 Summary:	Default Enlightenment init theme for medium speed computers
 Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla komputerów średniej szybkości
 Group:		Themes
-Requires:	enlightenment >= 0.16.999
+Requires:	enlightenment >= %{version}
 Provides:	enlightenment-init-default = %{version}
 
 %description -n enlightenment-init-default-medium_pc
@@ -85,7 +85,7 @@ razy mniejszej liczbie ramek.
 Summary:	Default Enlightenment init theme with large textures and all frames
 Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta z dużymi teksturami i wszystkimi ramkami
 Group:		Themes
-Requires:	enlightenment >= 0.16.999
+Requires:	enlightenment >= %{version}
 Provides:	enlightenment-init-default = %{version}
 
 %description -n enlightenment-init-default-fast_pc
@@ -96,7 +96,7 @@ Domyślny początkowy motyw Enlightenmenta z dużymi tekstorami i
 wszystkimi ramkami.
 
 %prep
-%setup -q -n %{_src_name}-%{version}
+%setup -q -n %{src_name}-%{version}
 for DIR in init themes; do
 sed -e 's/@EDJE_DEF@/-DLOWRES_PDA=1 -DMEDIUMRES_PDA=2 -DHIRES_PDA=3 -DSLOW_PC=4 -DMEDIUM_PC=5 -DFAST_PC=6 -DE17_PROFILE=$(PROFILE)/' \
 	-e 's#@edje_cc@#%{_bindir}/edje_cc#'	\
