@@ -8,12 +8,12 @@
 Summary:	Default Enlightenment themes
 Summary(pl.UTF-8):	Domyślne motywy Enlightenmenta
 Name:		enlightenment-theme-default
-Version:	0.16.999.038
+Version:	0.16.999.043
 Release:	1
 License:	BSD
 Group:		Themes
-Source0:	http://enlightenment.freedesktop.org/files/%{src_name}-%{version}.tar.gz
-# Source0-md5:	d54d8f7094b398fbd547992b8ad80cae
+Source0:	http://download.enlightenment.org/snapshots/2008-05-19/%{src_name}-%{version}.tar.bz2
+# Source0-md5:	6f502991ef3059772b290b85aadda108
 URL:		http://enlightenment.org/
 BuildRequires:	edje
 BuildArch:	noarch
