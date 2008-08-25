@@ -4,16 +4,17 @@
 #	  but other still exists
 
 %define		src_name	enlightenment
+%define		_snap	20080813
 
 Summary:	Default Enlightenment themes
 Summary(pl.UTF-8):	Domyślne motywy Enlightenmenta
 Name:		enlightenment-theme-default
-Version:	0.16.999.043
-Release:	1
+Version:	0.16.999.044
+Release:	0.%{_snap}.1
 License:	BSD
 Group:		Themes
-Source0:	http://download.enlightenment.org/snapshots/2008-05-19/%{src_name}-%{version}.tar.bz2
-# Source0-md5:	6f502991ef3059772b290b85aadda108
+Source0:	%{src_name}-%{version}-%{_snap}.tar.bz2
+# Source0-md5:	43d72d394b034cea41bc85c87675ad24
 URL:		http://enlightenment.org/
 BuildRequires:	edje
 BuildArch:	noarch
@@ -96,7 +97,7 @@ Domyślny początkowy motyw Enlightenmenta z dużymi tekstorami i
 wszystkimi ramkami.
 
 %prep
-%setup -q -n %{src_name}-%{version}
+%setup -q -n %{src_name}-%{version}-%{_snap}
 for DIR in init themes; do
 sed -e 's/@EDJE_DEF@/-DLOWRES_PDA=1 -DMEDIUMRES_PDA=2 -DHIRES_PDA=3 -DSLOW_PC=4 -DMEDIUM_PC=5 -DFAST_PC=6 -DE17_PROFILE=$(PROFILE)/' \
 	-e 's#@edje_cc@#%{_bindir}/edje_cc#'	\
