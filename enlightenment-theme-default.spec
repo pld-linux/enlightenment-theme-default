@@ -8,12 +8,12 @@
 Summary:	Default Enlightenment themes
 Summary(pl.UTF-8):	Domyślne motywy Enlightenmenta
 Name:		enlightenment-theme-default
-Version:	0.16.999.050
+Version:	0.16.999.55225
 Release:	0.1
 License:	BSD
 Group:		Themes
-Source0:	http://download.enlightenment.org/snapshots/2008-09-25/%{src_name}-%{version}.tar.bz2
-# Source0-md5:	d9091195d9aae958cbd56b3289034973
+Source0:	http://download.enlightenment.org/snapshots/LATEST/%{src_name}-%{version}.tar.bz2
+# Source0-md5:	296e321c66e5819b21179307342e1d29
 URL:		http://enlightenment.org/
 BuildRequires:	edje
 BuildArch:	noarch
@@ -51,53 +51,9 @@ Default Enlightenment theme with large textures.
 %description fast_pc -l pl.UTF-8
 Domyślny motyw Enlightenmenta z dużymi teksturami.
 
-%package -n enlightenment-init-default-slow_pc
-Summary:	Default Enlightenment init theme for slow computers
-Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla wolnych komputerów
-Group:		Themes
-Requires:	enlightenment >= %{version}
-Provides:	enlightenment-init-default = %{version}
-
-%description -n enlightenment-init-default-slow_pc
-Default Enlightenment init theme with small textures and half number
-of frames.
-
-%description -n enlightenment-init-default-slow_pc -l pl.UTF-8
-Domyślny początkowy motyw Enlightenmenta z małymi teksturami i dwa
-razy mniejszej liczbie ramek.
-
-%package -n enlightenment-init-default-medium_pc
-Summary:	Default Enlightenment init theme for medium speed computers
-Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta dla komputerów średniej szybkości
-Group:		Themes
-Requires:	enlightenment >= %{version}
-Provides:	enlightenment-init-default = %{version}
-
-%description -n enlightenment-init-default-medium_pc
-Default Enlightenment init theme with large textures and half number
-of frames.
-
-%description -n enlightenment-init-default-medium_pc -l pl.UTF-8
-Domyślny początkowy motyw Enlightenmenta z dużymi teksturami i dwa
-razy mniejszej liczbie ramek.
-
-%package -n enlightenment-init-default-fast_pc
-Summary:	Default Enlightenment init theme with large textures and all frames
-Summary(pl.UTF-8):	Domyślny początkowy motyw Enlightenmenta z dużymi teksturami i wszystkimi ramkami
-Group:		Themes
-Requires:	enlightenment >= %{version}
-Provides:	enlightenment-init-default = %{version}
-
-%description -n enlightenment-init-default-fast_pc
-Default Enlightenment init theme with large textures and all frames.
-
-%description -n enlightenment-init-default-fast_pc -l pl.UTF-8
-Domyślny początkowy motyw Enlightenmenta z dużymi tekstorami i
-wszystkimi ramkami.
-
 %prep
 %setup -q -n %{src_name}-%{version}
-for DIR in init themes; do
+for DIR in themes; do
 sed -e 's/@EDJE_DEF@/-DLOWRES_PDA=1 -DMEDIUMRES_PDA=2 -DHIRES_PDA=3 -DSLOW_PC=4 -DMEDIUM_PC=5 -DFAST_PC=6 -DE17_PROFILE=$(PROFILE)/' \
 	-e 's#@edje_cc@#%{_bindir}/edje_cc#'	\
 	-e 's#$(top_srcdir)/data/#../#'	\
@@ -106,13 +62,6 @@ sed -e 's/@EDJE_DEF@/-DLOWRES_PDA=1 -DMEDIUMRES_PDA=2 -DHIRES_PDA=3 -DSLOW_PC=4 
 done
 
 %build
-%{__make} -C data/init default.edj PROFILE=SLOW_PC
-mv data/init/{default.edj,default-slow_pc.edj}
-%{__make} -C data/init default.edj PROFILE=MEDIUM_PC
-mv data/init/{default.edj,default-medium_pc.edj}
-%{__make} -C data/init default.edj PROFILE=FAST_PC
-mv data/init/{default.edj,default-fast_pc.edj}
-
 %{__make} -C data/themes default.edj PROFILE=SLOW_PC
 mv data/themes/{default.edj,default-slow_pc.edj}
 %{__make} -C data/themes default.edj PROFILE=FAST_PC
@@ -120,11 +69,7 @@ mv data/themes/{default.edj,default-fast_pc.edj}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/{init,themes}
-
-install data/init/default-{slow,medium,fast}_pc.edj \
-	$RPM_BUILD_ROOT%{_datadir}/enlightenment/data/init/
-touch $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/init/default.edj
+install -d $RPM_BUILD_ROOT%{_datadir}/enlightenment/data/themes
 
 install data/themes/default-{slow,fast}_pc.edj \
 	$RPM_BUILD_ROOT%{_datadir}/enlightenment/data/themes/
@@ -141,18 +86,6 @@ rm -rf $RPM_BUILD_ROOT
 [ -e %{_datadir}/enlightenment/data/themes/default.edj ] || \
 	ln -sf %{_datadir}/enlightenment/data/themes/{default-fast_pc.edj,default.edj}
 
-%post -n enlightenment-init-default-slow_pc
-[ -e %{_datadir}/enlightenment/data/init/default.edj ] || \
-	ln -sf %{_datadir}/enlightenment/data/init/{default-slow_pc.edj,default.edj}
-
-%post -n enlightenment-init-default-medium_pc
-[ -e %{_datadir}/enlightenment/data/init/default.edj ] || \
-	ln -sf %{_datadir}/enlightenment/data/init/{default-medium_pc.edj,default.edj}
-
-%post -n enlightenment-init-default-fast_pc
-[ -e %{_datadir}/enlightenment/data/init/default.edj ] || \
-	ln -sf %{_datadir}/enlightenment/data/init/{default-fast_pc.edj,default.edj}
-
 %files slow_pc
 %defattr(644,root,root,755)
 %{_datadir}/enlightenment/data/themes/default-slow_pc.edj
@@ -162,18 +95,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/enlightenment/data/themes/default-fast_pc.edj
 %ghost %{_datadir}/enlightenment/data/themes/default.edj
-
-%files -n enlightenment-init-default-slow_pc
-%defattr(644,root,root,755)
-%{_datadir}/enlightenment/data/init/default-slow_pc.edj
-%ghost %{_datadir}/enlightenment/data/init/default.edj
-
-%files -n enlightenment-init-default-medium_pc
-%defattr(644,root,root,755)
-%{_datadir}/enlightenment/data/init/default-medium_pc.edj
-%ghost %{_datadir}/enlightenment/data/init/default.edj
-
-%files -n enlightenment-init-default-fast_pc
-%defattr(644,root,root,755)
-%{_datadir}/enlightenment/data/init/default-fast_pc.edj
-%ghost %{_datadir}/enlightenment/data/init/default.edj
