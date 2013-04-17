@@ -5,6 +5,9 @@
 
 %define		src_name	enlightenment
 
+# /usr/share/enlightenment/data/themes/default.edj must be in both packages
+%define		_duplicate_files_terminate_build	0
+
 Summary:	Default Enlightenment themes
 Summary(pl.UTF-8):	Domyślne motywy Enlightenmenta
 Name:		enlightenment-theme-default
